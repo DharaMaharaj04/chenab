@@ -16,13 +16,13 @@
       color: #6a603a;
       font-weight: bold;
     }
-    .bg{
+    .bg {
       background-color: #6a603a;
     }
-    .txt:hover{
+    .txt:hover {
       color: #6a603a;
     }
-    .gy{
+    .gy {
       color: #6a603a;
     }
   </style>
@@ -33,22 +33,40 @@
   <header class="bg-white shadow sticky top-0 z-50">
     <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
       <h1 class="text-3xl font-bold gy">Chenab Bridge</h1>
-      <nav class="space-x-4 text-sm">
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex space-x-4 text-sm">
         <a href="#overview" class="font-bold txt">Overview</a>
         <a href="#specs" class="font-bold txt">Specifications</a>
         <a href="#engineering" class="font-bold txt">Engineering</a>
         <a href="#impact" class="font-bold txt">Impact</a>
         <a href="#gallery" class="font-bold txt">Gallery</a>
       </nav>
+
+      <!-- Hamburger Button -->
+      <button class="md:hidden focus:outline-none" onclick="toggleMenu()">
+        <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="md:hidden hidden px-4 pb-4 space-y-2 bg-white shadow">
+      <a href="#overview" class="block font-bold txt">Overview</a>
+      <a href="#specs" class="block font-bold txt">Specifications</a>
+      <a href="#engineering" class="block font-bold txt">Engineering</a>
+      <a href="#impact" class="block font-bold txt">Impact</a>
+      <a href="#gallery" class="block font-bold txt">Gallery</a>
     </div>
   </header>
 
   <!-- Hero Section -->
   <section class="bg-cover bg-center text-white text-center py-32 px-4" style="background-image: url('https://i.pinimg.com/736x/90/42/a7/9042a7ebd4e6e282f3ba382d51953baf.jpg');">
     <div class="bg-opacity-100 bg-cover">
-    <h2 class="text-4xl md:text-6xl font-bold" data-aos="fade-down">Chenab Bridge</h2>
-    <p class="text-xl mt-4" data-aos="fade-up">Where Steel Meets the Sky</p>
-  </div>
+      <h2 class="text-4xl md:text-6xl font-bold" data-aos="fade-down">Chenab Bridge</h2>
+      <p class="text-xl mt-4" data-aos="fade-up">Where Steel Meets the Sky</p>
+    </div>
   </section>
 
   <!-- Overview -->
@@ -61,7 +79,7 @@
           Located between Bakkal and Kauri in the Reasi district, it spans a gorge 359m deep.
         </p>
       </div>
-      <div class="md:w-1/2">
+      <div class="md:w-1/2 mt-6 md:mt-0">
         <img src="https://i.pinimg.com/736x/82/f3/3d/82f33d9d271fb101d7edf22ca1ae6cf9.jpg" alt="Chenab Bridge" class="rounded-lg shadow-lg">
       </div>
     </div>
@@ -71,23 +89,25 @@
   <section id="specs" class="py-16 bg-gray-100">
     <div class="max-w-6xl mx-auto px-6" data-aos="fade-up">
       <h2 class="text-3xl font-bold mb-6 text-center">World Record Specifications</h2>
-      <table class="w-full table-auto border-collapse border border-gray-300">
-        <thead>
-          <tr class="bg-gray-200">
-            <th class="border border-gray-300 px-4 py-2">Feature</th>
-            <th class="border border-gray-300 px-4 py-2">Details</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td class="text-center border px-4 py-2">Length</td><td class="text-center border px-4 py-2">1,315 meters</td></tr>
-          <tr><td class="text-center border px-4 py-2">Main Arch Span</td><td class="text-center border px-4 py-2">467 meters</td></tr>
-          <tr><td class="text-center border px-4 py-2">Height above Chenab</td><td class="text-center border px-4 py-2">359 meters (higher than Eiffel Tower)</td></tr>
-          <tr><td class="text-center border px-4 py-2">Steel Used</td><td class="text-center border px-4 py-2">28,000 tonnes</td></tr>
-          <tr><td class="text-center border px-4 py-2">Wind Resistance</td><td class="text-center border px-4 py-2">Up to 266 km/h</td></tr>
-          <tr><td class="text-center border px-4 py-2">Seismic Zone</td><td class="text-center border px-4 py-2">Zone IV</td></tr>
-          <tr><td class="text-center border px-4 py-2">Completion</td><td class="text-center border px-4 py-2">2022 (Testing in 2023)</td></tr>
-        </tbody>
-      </table>
+      <div class="overflow-x-auto">
+        <table class="w-full table-auto border-collapse border border-gray-300">
+          <thead>
+            <tr class="bg-gray-200">
+              <th class="border border-gray-300 px-4 py-2">Feature</th>
+              <th class="border border-gray-300 px-4 py-2">Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="text-center border px-4 py-2">Length</td><td class="text-center border px-4 py-2">1,315 meters</td></tr>
+            <tr><td class="text-center border px-4 py-2">Main Arch Span</td><td class="text-center border px-4 py-2">467 meters</td></tr>
+            <tr><td class="text-center border px-4 py-2">Height above Chenab</td><td class="text-center border px-4 py-2">359 meters (higher than Eiffel Tower)</td></tr>
+            <tr><td class="text-center border px-4 py-2">Steel Used</td><td class="text-center border px-4 py-2">28,000 tonnes</td></tr>
+            <tr><td class="text-center border px-4 py-2">Wind Resistance</td><td class="text-center border px-4 py-2">Up to 266 km/h</td></tr>
+            <tr><td class="text-center border px-4 py-2">Seismic Zone</td><td class="text-center border px-4 py-2">Zone IV</td></tr>
+            <tr><td class="text-center border px-4 py-2">Completion</td><td class="text-center border px-4 py-2">2022 (Testing in 2023)</td></tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </section>
 
@@ -123,7 +143,7 @@
           <li>Trial run completed on 13 August 2023</li>
         </ul>
         <div>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/Bkq5r-uVcH4?si=SeFtAwBBJfyAFdHd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/Bkq5r-uVcH4?si=SeFtAwBBJfyAFdHd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
       </div>
     </div>
@@ -133,8 +153,8 @@
   <section id="gallery" class="py-16 px-6 max-w-6xl mx-auto">
     <div class="grid md:grid-cols-3 gap-6">
       <img src="https://i.pinimg.com/736x/91/e4/76/91e476447564ea2867f1918694885236.jpg" alt="Image 1" class="rounded-lg shadow-lg">
-      <img src="https://i.pinimg.com/736x/c5/70/c5/c570c5566447fcc715dd524535be881d.jpg" alt="Image 3" class="rounded-lg shadow-lg">
-      <img src="https://i.pinimg.com/736x/81/b1/b5/81b1b589eb20d92c8a35c0851dd6e601.jpg" alt="Image 2" class="rounded-lg shadow-lg">
+      <img src="https://i.pinimg.com/736x/c5/70/c5/c570c5566447fcc715dd524535be881d.jpg" alt="Image 2" class="rounded-lg shadow-lg">
+      <img src="https://i.pinimg.com/736x/81/b1/b5/81b1b589eb20d92c8a35c0851dd6e601.jpg" alt="Image 3" class="rounded-lg shadow-lg">
     </div>
   </section>
 
@@ -143,6 +163,14 @@
     <p class="text-lg">Celebrating A Marvel of Indian Railways | BAPS Anand</p>
   </footer>
 
-  <script>AOS.init({ duration: 1000 });</script>
+  <!-- Scripts -->
+  <script>
+    AOS.init({ duration: 1000 });
+
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('hidden');
+    }
+  </script>
 </body>
 </html>
